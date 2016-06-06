@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="selphyPrint" version="1" xmlns:android="http://schemas.android.com/apk/res/android" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+  <name>selphyPrint</name>
+  <js-module name="selphyPrint" src="www/selphyPrint.js"><clobbers target="cordova.plugins.selphyPrint"/></js-module>
+  <platform name="android">
+    <config-file parent="/*" target="res/xml/config.xml">
+      <feature name="selphyPrint"><param name="android-package" value="selphyPrint.selphyPrint"/></feature>
+    </config-file>
+    <config-file parent="/*" target="AndroidManifest.xml"></config-file><source-file src="src/android/selphyPrint.java" target-dir="src/selphyPrint/selphyPrint"/>
+    <framework src="src/android/selphyPrint.gradle" custom="true" type="gradleReference" />
+    <resource-file src="goPrint/print.aar" target="goPrint/print.aar" />
+  </platform>
+</plugin>
